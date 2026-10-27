@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
-
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import './globals.css'
 
 export const metadata: Metadata = {
   title: "Amin Messenger Homepage",
@@ -9,16 +10,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="de">
-      <header>
-        <h1>Hello</h1>
-      </header>
+    <html className="bg-green-200" lang="de">
+      <body>
+        <header>
+          <Navbar />
+        </header>
 
-      <body>{children}</body>
+        <main>{children}</main>
 
-      <footer>
-        <h1>Hello</h1>
-      </footer>
+          <Footer />
+        
+      </body>
     </html>
   );
 }
