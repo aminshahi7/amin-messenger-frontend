@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import Signup from "./components/Signup";
 
 export const metadata: Metadata = {
   title: "Amin Messenger Homepage",
@@ -7,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  
+
   return (
     
       <main>
-        <div className="flex flex-col items-center justify-center mt-15">
+        <div className="flex justify-center mt-15">
           <div className="text-6xl text-blue-600">
             <Image
               src="/messenger-logo.png"
@@ -22,9 +23,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div>
-
-        </div>
+        <Signup />
       </main>
   );
 }

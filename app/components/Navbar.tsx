@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/90 shadow-sm backdrop-blur-md rounded-2xl">
@@ -17,15 +18,15 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
-          <Link href="/" className="font-medium text-gray-700 transition hover:text-blue-600">
+          <Link href="/" className="font-sans text-gray-700 transition hover:text-blue-600">
             Home
           </Link>
 
-          <Link href="/features" className="font-medium text-gray-700 transition hover:text-blue-600">
+          <Link href="/features" className="font-sans text-gray-700 transition hover:text-blue-600">
             Features
           </Link>
 
-          <Link href="/about" className="font-medium text-gray-700 transition hover:text-blue-600">
+          <Link href="/about" className="font-sans text-gray-700 transition hover:text-blue-600">
             About
           </Link>
         </div>
@@ -62,7 +63,7 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setMenuOpen(false)}
-            className="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+            className="block rounded-lg px-3 py-2 font-sans text-gray-700 hover:bg-blue-50 hover:text-blue-600"
           >
             Home
           </Link>
@@ -70,7 +71,7 @@ export default function Navbar() {
           <Link
             href="/features"
             onClick={() => setMenuOpen(false)}
-            className="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+            className="block rounded-lg px-3 py-2 font-sans text-gray-700 hover:bg-blue-50 hover:text-blue-600"
           >
             Features
           </Link>
@@ -78,7 +79,7 @@ export default function Navbar() {
           <Link
             href="/about"
             onClick={() => setMenuOpen(false)}
-            className="block rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+            className="block rounded-lg px-3 py-2 font-sans text-gray-700 hover:bg-blue-50 hover:text-blue-600"
           >
             About
           </Link>
