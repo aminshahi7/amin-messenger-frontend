@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import Counter from "./Counter";
 
 export const metadata: Metadata = {
   title: "Amin Messenger Homepage",
@@ -7,9 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  
   return (
     <main>
-      <h1>Amin is There</h1>
+      <Counter />
     </main>
   );
 }
