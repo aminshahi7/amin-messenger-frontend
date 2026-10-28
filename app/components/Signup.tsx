@@ -1,6 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
+
 export default function Signup(){
+
+    const router = useRouter();
 
     const onSubmit = async (event: React.SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -10,7 +15,7 @@ export default function Signup(){
         const user = {
             username: data.get("username"),
             firstName: data.get("firstname"),
-            lastname: data.get("lastname"),
+            lastName: data.get("lastname"),
             email: data.get("email"),
             password: data.get("password"),
         };
@@ -28,6 +33,7 @@ export default function Signup(){
             return;
         }
 
+        router.push("/dashboard");
         console.log("Registrierung erfolgreich");
     }
 
