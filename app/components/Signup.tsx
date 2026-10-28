@@ -15,42 +15,15 @@ export default function Signup(){
             password: data.get("password"),
         };
 
-        const requestData = new FormData();
-
-        requestData.append(
-            "user",
-            new Blob([JSON.stringify(user)], {
-                type: "application/json",
-            })
-        );
-
-        const profilePicture = data.get("profilePicture");
-
-        if (profilePicture instanceof File && profilePicture.size > 0) {
-            requestData.append("profilePicture", profilePicture);
-        }
-
-        if (profilePicture instanceof File && profilePicture.size > 0) {
-            const maxSize = 20 * 1024 * 1024; // 20 MB
-
-
-            if (profilePicture.size > maxSize) {
-                alert("Das Profilbild darf maximal 20 MB groß sein.");
-                return;
-            }
-        }
-
         const response = await fetch("http://localhost:9000/api/login", {
             method: "POST",
-            body: requestData,
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(user)
         });
 
-        const responseText = await response.text();
-
-
         if (!response.ok) {
-            console.error("HTTP-Status:", response.status);
-            console.error("Backend-Fehler:", responseText);
             alert(`Registrierung fehlgeschlagen: ${response.status}`);
             return;
         }
