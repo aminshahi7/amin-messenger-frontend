@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import Signup from "./components/Signup";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Amin Messenger Homepage",
@@ -23,7 +23,14 @@ export default function Home() {
             />
           </div>
         </div>
-        <Signup />
+        <div className="flex justify-center mt-6">
+          <Link
+            href="/signup"
+            className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl"
+          >
+            Sign up HIER
+          </Link>
+        </div>
       </main>
   );
 }

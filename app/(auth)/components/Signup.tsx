@@ -20,7 +20,7 @@ export default function Signup(){
             password: data.get("password"),
         };
 
-        const response = await fetch("http://localhost:9000/api/login", {
+        const response = await fetch("http://localhost:9000/api/signup", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -28,19 +28,21 @@ export default function Signup(){
             body: JSON.stringify(user)
         });
 
+        const result = await response.json();
+
         if (!response.ok) {
-            alert(`Registrierung fehlgeschlagen: ${response.status}`);
+            alert(result.message);
             return;
         }
 
-        router.push("/dashboard");
+        router.push("/login");
         console.log("Registrierung erfolgreich");
     }
 
     return(
 
         <main>
-          <div className="flex min-h-screen items-center justify-center  bg-green-200 px-4">
+          <div className="flex m-10 min-h-screen items-center justify-center  bg-green-200 px-4">
 
             <form
                 onSubmit={onSubmit}

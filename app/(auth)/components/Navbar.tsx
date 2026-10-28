@@ -22,8 +22,8 @@ export default function Navbar() {
             Home
           </Link>
 
-          <Link href="/features" className="font-sans text-gray-700 transition hover:text-blue-600">
-            Features
+          <Link href="/signup" className="font-sans text-gray-700 transition hover:text-blue-600">
+            Signup
           </Link>
 
           <Link href="/about" className="font-sans text-gray-700 transition hover:text-blue-600">
