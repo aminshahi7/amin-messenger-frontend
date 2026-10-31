@@ -46,20 +46,20 @@ export default function Signup(){
 
             <form
                 onSubmit={onSubmit}
-                className="w-full max-w-md space-y-6 rounded-2xl border  border-slate-800 bg-slate-900 p-8 shadow-2xl shadow-blue-950/30"
+                className="w-full max-w-sm space-y-6 rounded-2xl border  border-slate-800 bg-slate-900 p-8 shadow-2xl shadow-blue-950/30"
             >
 
                 {/* Header */}
                 <div className="text-center">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-600 text-2xl font-bold text-white shadow-lg shadow-blue-600/30">
+                    <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-600 text-2xl font-bold text-white shadow-lg shadow-blue-600/30">
                     A
                     </div>
 
-                    <h1 className="text-3xl font-bold tracking-tight text-white">
+                    <h1 className="text-2xl font-bold tracking-tight text-white">
                     Create Account
                     </h1>
 
-                    <p className="mt-2 text-sm text-slate-400">
+                    <p className="mt-2 text-xs text-slate-400">
                     Erstelle deinen Account bei AminMessenger
                     </p>
                 </div>
