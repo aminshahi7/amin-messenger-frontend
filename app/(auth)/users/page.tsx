@@ -1,31 +1,31 @@
-import React from 'react'
-import { cacheLife } from 'next/dist/server/use-cache/cache-life';
+"use client"
 
-const users = async () => {
-
-      "use cache";
-
-        
-      cacheLife("hours");
-
-    const response = await fetch("https://randomuser.me/api/?results=5&utm_source=chatgpt.com");
-
-    if (!response.ok) {
-        throw new Error(`HTTP-Fehler: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    const data2 = data.results;
-
-  return (
-    <div>
-      {data2.map((data2: any) => {
-        return <p key={data2.login.uuid}>{data2.name.first}</p>
-      })
-      }
-    </div>
-  )
+import Sidebar from "@/app/(auth)/components/Sidebar";
+interface User {
+    login: {
+        uuid: string;
+    };
+    name: {
+        first: string;
+        last: string;
+    };
 }
 
-export default users;
+const Users = () => {
+    return (
+        <main>
+            <div role="alert" className="alert alert-vertical sm:alert-horizontal">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current text-info h-6 w-6 shrink-0">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+  </svg>
+  <span>we use cookies for no reason.</span>
+  <div>
+    <button className="btn btn-sm">Deny</button>
+    <button className="btn btn-sm btn-primary">Accept</button>
+  </div>
+</div>
+        </main>
+    );
+};
+
+export default Users;
