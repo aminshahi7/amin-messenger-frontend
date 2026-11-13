@@ -23,11 +23,13 @@ export default function DashboardNav() {
                     className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 bg-white p-2 text-black shadow">
                     <li>
                     <a href="/dashboard/profile">
-                        Profile
+                        Profile 👤
                     </a>
                     </li>
-                    <li><a href="/dashboard/setting">Settings</a></li>
-                    <li><a>Logout</a></li>
+                    <li><a href="/dashboard/contacts">Contacts 👥</a></li>
+                    <li><a href="/dashboard/setting">Settings ⚙️</a></li>
+                    <li><a href="/dashboard/chats">Chats 💬</a></li>
+                    <li><a>Logout 🚪</a></li>
                 </ul>
                 </div>
             </div>
