@@ -1,6 +1,10 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 export default function Login(){
+
+    const router = useRouter();
 
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -34,6 +38,8 @@ export default function Login(){
             }
 
             console.log("Login erfolgreich:", result);
+
+            router.push("/dashboard");
 
         } catch (error) {
             console.error("Fehler beim Login:", error);
