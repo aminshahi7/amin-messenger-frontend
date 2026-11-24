@@ -33,7 +33,7 @@ export default function Contact({ firstName, email, onDelete }: ContactProps) {
     }
   };
   return (
-    <main>
+    <main onClick={() => console.log("Hello")}>
       <div className="bg-blue-500 cursor-pointer hover:bg-blue-50 mx-auto mt-4 flex w-full max-w-xs items-center gap-3 rounded-xl border border-gray-200 bg-white p-3 shadow-sm transition-all duration-200 hover:border-blue-300 hover:shadow-md">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">
           {firstName.charAt(0).toUpperCase()}
