@@ -1,14 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
+  const router = useRouter();
 
-    return (
-        <main>
-            <h1>Chats</h1>
-      </main>
-    );
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch("http://localhost:9000/auth/check", {
+          method: "GET",
+          credentials: "include",
+        });
+
+        if (response.ok) {
+          return;
+        } else {
+          router.replace("/login");
+        }
+      } catch (error) {
+        console.log("Authentication error:", error);
+        router.replace("/login");
+      }
+    };
+
+    checkAuth();
+  }, [router]);
+
+  return (
+    <main>
+      <h1>Chats</h1>
+    </main>
+  );
 }

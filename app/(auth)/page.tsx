@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 export default function Home() {
 
   return (
-    
       <main>
         <div className="flex justify-center mt-15">
           <div className="text-6xl text-blue-600">
             <Image
+             loading="eager"
               src="/messenger-logo.png"
               alt="AminMessenger Logo"
               width={180}
